@@ -1,0 +1,234 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../resources/content/**/*.php';
+
+@theme {
+    --font-sans: 'Inter', 'Inter Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+    --color-brand-50: #eff5ff;
+    --color-brand-100: #dbe7fe;
+    --color-brand-200: #bfd4fe;
+    --color-brand-300: #93b6fd;
+    --color-brand-400: #608dfa;
+    --color-brand-500: #3b6af6;
+    --color-brand-600: #2459e0;
+    --color-brand-700: #1d46c4;
+    --color-brand-800: #1e3c9f;
+    --color-brand-900: #1e377d;
+
+    --color-ink: #0f172a;
+    --color-body: #334155;
+    --color-muted: #5b6b80;
+    --color-line: #e2e8f0;
+    --color-line-strong: #cbd5e1;
+    --color-canvas: #f7f9fc;
+    --color-surface: #ffffff;
+
+    --color-success-50: #ecfdf5;
+    --color-success-600: #059669;
+    --color-success-700: #047857;
+    --color-danger-50: #fef2f2;
+    --color-danger-200: #fecaca;
+    --color-danger-700: #b91c1c;
+    --color-warning-50: #fffbeb;
+    --color-warning-200: #fde68a;
+    --color-warning-800: #92400e;
+
+    --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px rgb(15 23 42 / 0.05);
+    --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05);
+}
+
+/* Metric-matched fallback so text does not shift when Inter finishes loading (reduces CLS). */
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial');
+    ascent-override: 90.44%;
+    descent-override: 22.52%;
+    line-gap-override: 0%;
+    size-adjust: 107.12%;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+    body {
+        @apply bg-surface font-sans text-body antialiased;
+    }
+
+    h1, h2, h3, h4 {
+        @apply text-ink;
+        text-wrap: balance;
+    }
+
+    :focus-visible {
+        @apply outline-2 outline-offset-2 outline-brand-600;
+    }
+
+    [x-cloak], [hidden] {
+        display: none !important;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-lg {
+        @apply px-5 py-3 text-base;
+    }
+
+    .btn-primary {
+        @apply bg-brand-600 text-white hover:bg-brand-700;
+    }
+
+    .btn-secondary {
+        @apply border border-line-strong bg-surface text-ink hover:border-brand-300 hover:bg-brand-50;
+    }
+
+    .btn-ghost {
+        @apply text-body hover:bg-canvas hover:text-ink;
+    }
+
+    .card {
+        @apply rounded-xl border border-line bg-surface shadow-card;
+    }
+
+    .eyebrow {
+        @apply text-sm font-semibold tracking-wide text-brand-700;
+    }
+
+    .section {
+        @apply py-14 sm:py-20;
+    }
+
+    .section-title {
+        @apply text-2xl font-bold tracking-tight sm:text-3xl;
+    }
+
+    .form-label {
+        @apply mb-1.5 block text-sm font-medium text-ink;
+    }
+
+    .form-input {
+        @apply block w-full rounded-lg border border-line-strong bg-surface px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 focus:outline-none sm:text-sm;
+    }
+
+    .form-input[aria-invalid='true'] {
+        @apply border-danger-700 focus:ring-danger-200;
+    }
+
+    .link {
+        @apply font-medium text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600;
+    }
+
+    .faq-answer a {
+        @apply font-medium text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600;
+    }
+
+    .faq-answer p + p {
+        @apply mt-3;
+    }
+
+    .prose-content {
+        @apply max-w-none text-base leading-7 text-body;
+    }
+
+    .prose-content > * + * {
+        @apply mt-5;
+    }
+
+    .prose-content h2 {
+        @apply mt-10 scroll-mt-24 text-xl font-bold tracking-tight sm:text-2xl;
+    }
+
+    .prose-content h3 {
+        @apply mt-8 scroll-mt-24 text-lg font-semibold;
+    }
+
+    .prose-content h2 + *, .prose-content h3 + * {
+        @apply mt-3;
+    }
+
+    .prose-content a {
+        @apply font-medium text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600;
+    }
+
+    .prose-content ul {
+        @apply list-disc space-y-2 pl-6 marker:text-line-strong;
+    }
+
+    .prose-content ol {
+        @apply list-decimal space-y-2 pl-6 marker:font-medium marker:text-muted;
+    }
+
+    .prose-content strong {
+        @apply font-semibold text-ink;
+    }
+
+    .prose-content code {
+        @apply rounded bg-canvas px-1.5 py-0.5 font-mono text-[0.875em] text-ink;
+    }
+
+    .prose-content pre {
+        @apply overflow-x-auto rounded-lg border border-line bg-canvas p-4 text-sm;
+    }
+
+    .prose-content pre code {
+        @apply bg-transparent p-0;
+    }
+
+    .prose-content blockquote {
+        @apply border-l-4 border-brand-200 pl-4 text-muted italic;
+    }
+
+    .prose-content table {
+        @apply block w-full overflow-x-auto text-left text-sm sm:table;
+        border-collapse: collapse;
+    }
+
+    .prose-content th {
+        @apply border-b border-line-strong px-3 py-2 font-semibold whitespace-nowrap text-ink;
+    }
+
+    .prose-content td {
+        @apply border-b border-line px-3 py-2 align-top;
+    }
+
+    .prose-content hr {
+        @apply my-10 border-line;
+    }
+
+    .checkerboard {
+        background-color: #fff;
+        background-image:
+            linear-gradient(45deg, #eef1f5 25%, transparent 25%),
+            linear-gradient(-45deg, #eef1f5 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #eef1f5 75%),
+            linear-gradient(-45deg, transparent 75%, #eef1f5 75%);
+        background-size: 16px 16px;
+        background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    }
+
+    .range {
+        @apply h-2 w-full cursor-pointer appearance-none rounded-full bg-line accent-brand-600;
+    }
+
+    .range::-webkit-slider-thumb {
+        @apply size-5 appearance-none rounded-full border-2 border-white bg-brand-600 shadow;
+    }
+
+    .range::-moz-range-thumb {
+        @apply size-5 rounded-full border-2 border-white bg-brand-600 shadow;
+    }
+}

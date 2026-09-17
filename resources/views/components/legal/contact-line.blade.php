@@ -1,0 +1,1 @@
+@props(['who' => 'us'])contact {{ $who }} through our <a href="{{ route('pages.contact') }}">contact page</a>

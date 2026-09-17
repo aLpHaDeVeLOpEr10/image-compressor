@@ -1,0 +1,359 @@
+{
+    "format-size-comparison": {
+        "src": "images/examples/format-size-comparison.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Bar chart comparing JPG, lossless PNG and WebP file sizes for a photo and for a screenshot of the same dimensions",
+        "caption": "Photo: JPG 109 KB, PNG 316 KB, WebP 78.9 KB. Screenshot: JPG 69.0 KB, PNG 175 KB, WebP 38.6 KB. In this test WebP at quality 80 was the smallest and lossless PNG the largest for both images; the strength of PNG for graphics is exact pixels and crisp text, not file size.",
+        "sources": [
+            {
+                "src": "images/examples/format-size-comparison-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/format-size-comparison.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "jpeg-8x8-blocks": {
+        "src": "images/examples/jpeg-8x8-blocks.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Enlarged pixels of a photo next to the same area saved as a very low quality JPG, with a grid showing the 8 × 8 blocks JPEG compresses separately",
+        "caption": "At very low quality each 8 × 8 block keeps only its smoothest frequencies, so blocks turn into flat patches and edges between them become visible. Encoded with libjpeg via PHP GD.",
+        "sources": [
+            {
+                "src": "images/examples/jpeg-8x8-blocks-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/jpeg-8x8-blocks.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "jpg-quality-ladder": {
+        "src": "images/examples/jpg-quality-ladder.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Four enlarged crops of the same photo saved as JPG at quality 90, 70, 40 and 15, with blocking and colour smearing visible at low quality",
+        "caption": "Whole-image JPG sizes: quality 90 = 277 KB, 70 = 126 KB, 40 = 74.4 KB, 15 = 38.2 KB. Measured with the CompressPix server encoder; enlarged 2× so artifacts are visible.",
+        "sources": [
+            {
+                "src": "images/examples/jpg-quality-ladder-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/jpg-quality-ladder.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "jpg-to-webp-sizes": {
+        "src": "images/examples/jpg-to-webp-sizes.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Bar chart comparing the file size of a JPG photo with WebP conversions at quality 85, 80 and 75",
+        "caption": "Original JPG 309 KB; WebP at quality 85 171 KB, 80 134 KB and 75 101 KB. WebP and JPG quality numbers are not directly comparable, so compare the images, not just the numbers.",
+        "sources": [
+            {
+                "src": "images/examples/jpg-to-webp-sizes-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/jpg-to-webp-sizes.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "jpg-vs-webp-equal-size": {
+        "src": "images/examples/jpg-vs-webp-equal-size.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Side-by-side enlarged crops of a JPG and a WebP of the same photo at almost the same file size",
+        "caption": "JPG at quality 60 is 101 KB. The highest WebP quality that fits the same size is 78 (96.8 KB). Crops enlarged 2×; measured with the CompressPix server encoders.",
+        "sources": [
+            {
+                "src": "images/examples/jpg-vs-webp-equal-size-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/jpg-vs-webp-equal-size.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "jpg-webp-avif-equal-size": {
+        "src": "images/examples/jpg-webp-avif-equal-size.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Three enlarged crops of the same photo saved as JPG, WebP and AVIF at almost the same file size",
+        "caption": "JPG at quality 50 is 87.3 KB. At the same size, the highest WebP quality is 76 (84.8 KB) and the highest AVIF quality is 45 (87.2 KB). Encoded with PHP GD (libjpeg, libwebp, libavif); quality scales differ between formats.",
+        "sources": [
+            {
+                "src": "images/examples/jpg-webp-avif-equal-size-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/jpg-webp-avif-equal-size.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "png-palette-ladder": {
+        "src": "images/examples/png-palette-ladder.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Crops of the same PNG screenshot saved lossless and reduced to 256, 64 and 16 colours, showing banding in the gradient chart at 16 colours",
+        "caption": "PNG sizes: lossless 175 KB, 256 colours 43.3 KB, 64 colours 32.6 KB, 16 colours 23.1 KB. Produced with the server fallback's palette conversion; the in-browser encoder uses a different quantizer, so its results differ slightly.",
+        "sources": [
+            {
+                "src": "images/examples/png-palette-ladder-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/png-palette-ladder.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "png-to-jpg-transparency": {
+        "src": "images/examples/png-to-jpg-transparency.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A logo PNG with a transparent background next to the converted JPG, where the transparent area has become solid white",
+        "caption": "The transparent PNG is 13.7 KB. Converted to JPG at quality 85 it is 31.0 KB, and the checkerboard (transparency) is replaced by white because JPG cannot store transparency. For flat graphics like this logo JPG can be larger than PNG; the big savings come from photos saved as PNG.",
+        "sources": [
+            {
+                "src": "images/examples/png-to-jpg-transparency-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/png-to-jpg-transparency.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "png-to-webp-transparency": {
+        "src": "images/examples/png-to-webp-transparency.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A product cut-out PNG with a soft transparent shadow next to the WebP version, which keeps the same transparency",
+        "caption": "The PNG with transparency is 15.3 KB; the WebP at quality 80 is 8.7 KB and keeps the transparent background and soft shadow. Measured with the CompressPix server encoder.",
+        "sources": [
+            {
+                "src": "images/examples/png-to-webp-transparency-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/png-to-webp-transparency.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "quality-size-curve": {
+        "src": "images/examples/quality-size-curve.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Line chart of file size against quality setting for JPG and WebP versions of the same 1600 × 1067 test photo",
+        "caption": "Measured with the CompressPix server encoder (PHP GD). At quality 80 the JPG is 168 KB and the WebP 112 KB; at quality 100 the JPG grows to 934 KB. File size rises steeply above about 90.",
+        "sources": [
+            {
+                "src": "images/examples/quality-size-curve-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/quality-size-curve.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "resize-vs-quality": {
+        "src": "images/examples/resize-vs-quality.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Two crops of the same photo at the same file size: one kept at full resolution with low JPG quality, one resized first and saved at higher quality",
+        "caption": "With a 120 KB budget, the 2400 × 1600 version needs quality 31 (120 KB) while the 1200 × 800 version can use quality 87 (120 KB). An image that is only displayed 1200 pixels wide can therefore use a much higher quality for the same number of bytes.",
+        "sources": [
+            {
+                "src": "images/examples/resize-vs-quality-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/resize-vs-quality.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "responsive-widths-sizes": {
+        "src": "images/examples/responsive-widths-sizes.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Bar chart of WebP file sizes for the same photo at 480, 960, 1440 and 1920 pixels wide",
+        "caption": "WebP at quality 80: 480 px 15.2 KB, 960 px 43.6 KB, 1440 px 71.0 KB, 1920 px 152 KB. Serving a 480-pixel image to a small phone instead of the 1920-pixel version saves most of the bytes.",
+        "sources": [
+            {
+                "src": "images/examples/responsive-widths-sizes-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/responsive-widths-sizes.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "scan-document-100kb": {
+        "src": "images/examples/scan-document-100kb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A scanned A4 application form compressed to under 100 KB as a JPG, with a 100% crop showing the text is still readable",
+        "caption": "A 1240 × 1754 A4 document scan (653 KB) compressed with a 100 KB target: 96.7 KB at 1240 × 1754 pixels, JPG quality 15, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/scan-document-100kb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/scan-document-100kb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "signature-under-20kb": {
+        "src": "images/examples/signature-under-20kb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A handwritten signature scan compressed to under 20 KB as a JPG, with the pen strokes still sharp",
+        "caption": "A 1500 × 600 signature scan (159 KB) compressed with a 20 KB target: 19.9 KB at 1500 × 600 pixels, JPG quality 39, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/signature-under-20kb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/signature-under-20kb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "target-100kb": {
+        "src": "images/examples/target-100kb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A 12-megapixel landscape test photo compressed with a 100 KB target, shown with its measured size, dimensions and quality",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 100 KB target: 93.9 KB at 3142 × 2356 pixels, JPG quality 10, after the dimensions were reduced. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/target-100kb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/target-100kb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "target-1mb": {
+        "src": "images/examples/target-1mb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A 12-megapixel landscape test photo compressed with a 1 MB target, shown with its measured size, dimensions and quality",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 1 MB target: 1,000 KB at 4000 × 3000 pixels, JPG quality 83, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/target-1mb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/target-1mb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "target-200kb": {
+        "src": "images/examples/target-200kb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A 12-megapixel landscape test photo compressed with a 200 KB target, shown with its measured size, dimensions and quality",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 200 KB target: 194 KB at 4000 × 3000 pixels, JPG quality 16, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/target-200kb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/target-200kb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "target-2mb": {
+        "src": "images/examples/target-2mb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A 12-megapixel landscape test photo compressed with a 2 MB target, shown with its measured size, dimensions and quality",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 2 MB target: 1.69 MB at 4000 × 3000 pixels, JPG quality 90, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/target-2mb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/target-2mb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "target-500kb": {
+        "src": "images/examples/target-500kb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A 12-megapixel landscape test photo compressed with a 500 KB target, shown with its measured size, dimensions and quality",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 500 KB target: 497 KB at 4000 × 3000 pixels, JPG quality 62, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/target-500kb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/target-500kb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "target-50kb": {
+        "src": "images/examples/target-50kb.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "A 12-megapixel landscape test photo compressed with a 50 KB target, shown with its measured size, dimensions and quality",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 50 KB target: 49.8 KB at 1998 × 1499 pixels, JPG quality 12, after the dimensions were reduced. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "sources": [
+            {
+                "src": "images/examples/target-50kb-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/target-50kb.webp",
+                "width": 1200
+            }
+        ]
+    },
+    "webp-to-jpg-sizes": {
+        "src": "images/examples/webp-to-jpg-sizes.webp",
+        "width": 1200,
+        "height": 675,
+        "alt": "Bar chart comparing the file size of a WebP photo with JPG conversions at quality 92, 85 and 75",
+        "caption": "Original WebP 152 KB; JPG at quality 92 367 KB, 85 249 KB and 75 180 KB. Converting WebP to JPG is a second lossy encode, so a higher JPG quality keeps more of the remaining detail.",
+        "sources": [
+            {
+                "src": "images/examples/webp-to-jpg-sizes-640.webp",
+                "width": 640
+            },
+            {
+                "src": "images/examples/webp-to-jpg-sizes.webp",
+                "width": 1200
+            }
+        ]
+    }
+}
