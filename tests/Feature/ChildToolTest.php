@@ -126,6 +126,11 @@ class ChildToolTest extends TestCase
         $this->createChild('png-to-jpg');
         $this->createChild('png-to-jpg', ['locale' => 'fr', 'slug' => 'png-en-jpg', 'status' => Tool::STATUS_DRAFT]);
 
+        $this->get('/tools/png-to-jpg')
+            ->assertOk()
+            ->assertSeeInOrder(['data-dropdown', 'English', 'Spanish'], false)
+            ->assertDontSee('Español');
+
         $this->get('/es/png-a-jpg')
             ->assertOk()
             ->assertSee('data-dropdown', false)

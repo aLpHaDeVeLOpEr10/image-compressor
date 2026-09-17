@@ -79,7 +79,7 @@ class ToolController extends Controller
             ->except('x-default')
             ->map(fn (string $url, string $code) => [
                 'code' => $code,
-                'name' => $this->languageName($code),
+                'name' => $this->languageName($code, $page->language()),
                 'url' => $url,
                 'current' => $url === $page->url(),
             ])
@@ -99,11 +99,12 @@ class ToolController extends Controller
     }
 
     /**
-     * A language's name in that language (e.g. "Español"), falling back to the configured English label.
+     * A language's name in the language of the page being viewed, e.g. "Spanish" on an English page and "Español" on
+     * a Spanish page. Falls back to the configured English label when the intl extension is not installed.
      */
-    private function languageName(string $code): string
+    private function languageName(string $code, string $displayLocale): string
     {
-        $name = extension_loaded('intl') ? \Locale::getDisplayLanguage($code, $code) : '';
+        $name = extension_loaded('intl') ? \Locale::getDisplayLanguage($code, $displayLocale) : '';
 
         if ($name === '' || $name === $code) {
             $name = config("tools.languages.{$code}") ?? ($code === 'en' ? 'English' : strtoupper($code));
