@@ -15,6 +15,6 @@ return [
     'description' => 'Convert WebP to JPG online for free. Open and upload WebP images in apps, forms and print services that only accept JPG. Runs in your browser, no sign-up.',
     'updated_at' => '2026-09-16',
     'figure' => 'webp-to-jpg-sizes',
-    'widget_options' => ['output' => 'image/jpeg'],
+    'widget_options' => ['input' => 'image/webp', 'output' => 'image/jpeg'],
     'related_tools' => ['jpg-to-webp', 'png-to-jpg', 'image-compressor'],
 ];

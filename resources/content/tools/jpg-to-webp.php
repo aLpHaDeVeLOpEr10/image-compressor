@@ -15,6 +15,6 @@ return [
     'description' => 'Convert JPG to WebP online for free. Make lighter images for websites, blogs and online stores, compare file sizes and download the .webp file instantly.',
     'updated_at' => '2026-09-16',
     'figure' => 'jpg-to-webp-sizes',
-    'widget_options' => ['output' => 'image/webp'],
+    'widget_options' => ['input' => 'image/jpeg', 'output' => 'image/webp'],
     'related_tools' => ['webp-to-jpg', 'image-compressor', 'png-to-webp'],
 ];

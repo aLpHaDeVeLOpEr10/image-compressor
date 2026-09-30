@@ -15,6 +15,6 @@ return [
     'description' => 'Convert PNG to WebP online for free and keep transparency. Get lighter product cut-outs and illustrations for the web, then download the .webp file.',
     'updated_at' => '2026-09-16',
     'figure' => 'png-to-webp-transparency',
-    'widget_options' => ['output' => 'image/webp'],
+    'widget_options' => ['input' => 'image/png', 'output' => 'image/webp'],
     'related_tools' => ['png-to-jpg', 'image-compressor', 'jpg-to-webp'],
 ];

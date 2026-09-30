@@ -2,7 +2,13 @@
 
 @php
     $config = config('compressor');
+    $inputFormats = array_values(array_intersect(array_keys($config['formats']), (array) ($options['input'] ?? array_keys($config['formats']))));
+    $inputExtensions = array_merge(...array_map(fn (string $mime) => $config['formats'][$mime]['extensions'], $inputFormats));
+    $inputAccept = implode(',', array_merge(array_map(fn (string $extension) => '.'.$extension, $inputExtensions), $inputFormats));
+    $inputUploadLabel = implode(', ', array_map(fn (string $mime) => $config['formats'][$mime]['upload_label'], $inputFormats));
     $settings = [
+        'input' => $inputFormats,
+        'inputLabel' => implode(', ', array_map(fn (string $mime) => $config['formats'][$mime]['label'], $inputFormats)),
         'endpoint' => route('process.compress'),
         'maxBytes' => $config['max_upload_mb'] * 1024 * 1024,
         'maxPixels' => $config['max_pixels'],
@@ -31,7 +37,7 @@
         </div>
 
         <div data-stage="upload">
-            <x-tools.compressor.upload-area :text="$text" />
+            <x-tools.compressor.upload-area :text="$text" :accept="$inputAccept" :formats="$inputUploadLabel" />
         </div>
 
         <div data-stage="configure" hidden>

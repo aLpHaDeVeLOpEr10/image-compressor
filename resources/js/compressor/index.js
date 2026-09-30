@@ -9,6 +9,7 @@ import { detectMime, formatBytes, formatDimensions, formatPercent, FORMAT_LABELS
  */
 const DEFAULT_MESSAGES = {
     unsupported: 'Please upload a JPG, PNG, or WebP image.',
+    wrong_format: 'This tool only accepts :formats images. Please upload a :formats file.',
     too_large: 'Your image exceeds the maximum allowed file size of :mb MB.',
     invalid: "We couldn't process this image. Please try another file.",
     too_many_pixels: 'This image has very large dimensions and cannot be processed. Please resize it and try again.',
@@ -207,6 +208,12 @@ class Compressor {
 
         if (!mime) {
             return this.fail(this.t('unsupported'), 'unsupported_format');
+        }
+
+        const accepted = this.settings.input ?? [];
+
+        if (accepted.length && !accepted.includes(mime)) {
+            return this.fail(this.t('wrong_format', { formats: this.settings.inputLabel }), 'wrong_format');
         }
 
         const sourceUrl = URL.createObjectURL(file);

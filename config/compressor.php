@@ -17,9 +17,9 @@ return [
     'rate_limit_per_minute' => (int) env('COMPRESSOR_RATE_LIMIT_PER_MINUTE', 30),
 
     'formats' => [
-        'image/jpeg' => ['label' => 'JPEG', 'extensions' => ['jpg', 'jpeg']],
-        'image/png' => ['label' => 'PNG', 'extensions' => ['png']],
-        'image/webp' => ['label' => 'WebP', 'extensions' => ['webp']],
+        'image/jpeg' => ['label' => 'JPEG', 'upload_label' => 'JPG, JPEG', 'extensions' => ['jpg', 'jpeg']],
+        'image/png' => ['label' => 'PNG', 'upload_label' => 'PNG', 'extensions' => ['png']],
+        'image/webp' => ['label' => 'WebP', 'upload_label' => 'WebP', 'extensions' => ['webp']],
     ],
 
     'output_formats' => [

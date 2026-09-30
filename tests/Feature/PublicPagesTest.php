@@ -86,6 +86,46 @@ class PublicPagesTest extends TestCase
             ->assertSee('Short answer');
     }
 
+    public function test_converter_pages_only_accept_their_own_input_format(): void
+    {
+        $pngToJpg = $this->get('/tools/png-to-jpg')
+            ->assertOk()
+            ->assertSee('accept=".png,image/png"', false)
+            ->assertSee('Supported:</span> PNG', false)
+            ->getContent();
+
+        $this->assertSame(['image/png'], $this->widgetSettings($pngToJpg)['input']);
+        $this->assertSame('PNG', $this->widgetSettings($pngToJpg)['inputLabel']);
+
+        $jpgToWebp = $this->get('/tools/jpg-to-webp')
+            ->assertOk()
+            ->assertSee('accept=".jpg,.jpeg,image/jpeg"', false)
+            ->assertSee('Supported:</span> JPG, JPEG', false)
+            ->getContent();
+
+        $this->assertSame(['image/jpeg'], $this->widgetSettings($jpgToWebp)['input']);
+
+        $homepage = $this->get('/')
+            ->assertOk()
+            ->assertSee('accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"', false)
+            ->assertSee('Supported:</span> JPG, JPEG, PNG, WebP', false)
+            ->getContent();
+
+        $this->assertSame(['image/jpeg', 'image/png', 'image/webp'], $this->widgetSettings($homepage)['input']);
+    }
+
+    /**
+     * The compressor widget's settings, read back from the data-settings attribute on the rendered page.
+     *
+     * @return array<string, mixed>
+     */
+    private function widgetSettings(string $html): array
+    {
+        $this->assertSame(1, preg_match("/data-settings='([^']+)'/", $html, $match), 'Widget settings expected on the page');
+
+        return json_decode(html_entity_decode($match[1], ENT_QUOTES), true, flags: JSON_THROW_ON_ERROR);
+    }
+
     public function test_only_the_merged_compressor_and_converters_exist(): void
     {
         foreach (['/tools/image-compressor', '/tools/compress-jpg', '/tools/compress-png', '/tools/compress-webp', '/tools/compress-image-to-100kb'] as $path) {

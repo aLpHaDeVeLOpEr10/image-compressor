@@ -15,6 +15,6 @@ return [
     'description' => 'Convert PNG to JPG online for free in your browser. Shrink photos and screenshots saved as PNG, set quality or a target size, and download a .jpg file.',
     'updated_at' => '2026-09-16',
     'figure' => 'png-to-jpg-transparency',
-    'widget_options' => ['output' => 'image/jpeg'],
+    'widget_options' => ['input' => 'image/png', 'output' => 'image/jpeg'],
     'related_tools' => ['png-to-webp', 'image-compressor', 'webp-to-jpg'],
 ];

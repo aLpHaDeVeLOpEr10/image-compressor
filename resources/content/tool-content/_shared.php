@@ -48,7 +48,6 @@ return [
     'widget_drop_or' => 'or',
     'widget_choose_button' => 'Choose Image',
     'widget_supported_label' => 'Supported:',
-    'widget_supported_value' => 'JPG, JPEG, PNG, WebP',
     'widget_max_size_label' => 'Maximum file size:',
     'widget_max_size_value' => '{max_upload_mb} MB',
     'widget_paste_hint' => 'You can also paste an image from your clipboard.',
@@ -94,6 +93,7 @@ return [
 
     // Compressor widget: messages shown by JavaScript.
     'widget_msg_unsupported' => 'Please upload a JPG, PNG, or WebP image.',
+    'widget_msg_wrong_format' => 'This tool only accepts :formats images. Please upload a :formats file.',
     'widget_msg_too_large' => 'Your image exceeds the maximum allowed file size of :mb MB.',
     'widget_msg_invalid' => "We couldn't process this image. Please try another file.",
     'widget_msg_too_many_pixels' => 'This image has very large dimensions and cannot be processed. Please resize it and try again.',
