@@ -131,7 +131,7 @@ class GenerateExampleImages extends Command
 
         $this->save('quality-size-curve', $canvas,
             'Line chart of file size against quality setting for JPG and WebP versions of the same 1600 × 1067 test photo',
-            sprintf('Measured with the CompressPix server encoder (PHP GD). At quality 80 the JPG is %s and the WebP %s; at quality 100 the JPG grows to %s. File size rises steeply above about 90.',
+            sprintf('Measured with the PicsCompressor server encoder (PHP GD). At quality 80 the JPG is %s and the WebP %s; at quality 100 the JPG grows to %s. File size rises steeply above about 90.',
                 $this->bytes($jpg[80]), $this->bytes($webp[80]), $this->bytes($jpg[100])));
     }
 
@@ -154,7 +154,7 @@ class GenerateExampleImages extends Command
 
         $this->save('jpg-quality-ladder', $canvas,
             'Four enlarged crops of the same photo saved as JPG at quality 90, 70, 40 and 15, with blocking and colour smearing visible at low quality',
-            sprintf('Whole-image JPG sizes: quality 90 = %s, 70 = %s, 40 = %s, 15 = %s. Measured with the CompressPix server encoder; enlarged 2× so artifacts are visible.',
+            sprintf('Whole-image JPG sizes: quality 90 = %s, 70 = %s, 40 = %s, 15 = %s. Measured with the PicsCompressor server encoder; enlarged 2× so artifacts are visible.',
                 $this->bytes($sizes[90]), $this->bytes($sizes[70]), $this->bytes($sizes[40]), $this->bytes($sizes[15])));
     }
 
@@ -196,7 +196,7 @@ class GenerateExampleImages extends Command
 
         $this->save('jpg-vs-webp-equal-size', $canvas,
             'Side-by-side enlarged crops of a JPG and a WebP of the same photo at almost the same file size',
-            sprintf('JPG at quality 60 is %s. The highest WebP quality that fits the same size is %d (%s). Crops enlarged 2×; measured with the CompressPix server encoders.',
+            sprintf('JPG at quality 60 is %s. The highest WebP quality that fits the same size is %d (%s). Crops enlarged 2×; measured with the PicsCompressor server encoders.',
                 $this->bytes($jpg->size()), $webpQuality, $this->bytes(strlen($webp))));
     }
 
@@ -281,7 +281,7 @@ class GenerateExampleImages extends Command
 
         $this->save('png-to-webp-transparency', $canvas,
             'A product cut-out PNG with a soft transparent shadow next to the WebP version, which keeps the same transparency',
-            sprintf('The PNG with transparency is %s; the WebP at quality 80 is %s and keeps the transparent background and soft shadow. Measured with the CompressPix server encoder.',
+            sprintf('The PNG with transparency is %s; the WebP at quality 80 is %s and keeps the transparent background and soft shadow. Measured with the PicsCompressor server encoder.',
                 $this->bytes($png), $this->bytes($webp->size())));
     }
 
@@ -466,7 +466,7 @@ class GenerateExampleImages extends Command
         }
 
         $this->save($key, $canvas, $alt, sprintf(
-            'A %d × %d %s (%s) compressed with a %s target: %s at %d × %d pixels, JPG quality %d%s. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.',
+            'A %d × %d %s (%s) compressed with a %s target: %s at %d × %d pixels, JPG quality %d%s. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.',
             $sourceWidth, $sourceHeight, $subject, $this->bytes($originalBytes), $targetLabel, $this->bytes($result->size()), $result->width, $result->height, $result->quality,
             $result->resized ? ', after the dimensions were reduced' : ', without resizing',
         ));
@@ -550,7 +550,7 @@ class GenerateExampleImages extends Command
         }
 
         imagefilledrectangle($image, (int) (1040 * $s), (int) (470 * $s), (int) (1500 * $s), (int) (560 * $s), $this->rgb($image, 255, 255, 255));
-        imagettftext($image, 30 * $s, 0, (int) (1062 * $s), (int) (528 * $s), $this->rgb($image, 20, 30, 50), $this->boldFont, 'CompressPix test photo');
+        imagettftext($image, 30 * $s, 0, (int) (1062 * $s), (int) (528 * $s), $this->rgb($image, 20, 30, 50), $this->boldFont, 'PicsCompressor test photo');
 
         for ($i = 0, $count = (int) ($width * $height / 45); $i < $count; $i++) {
             $x = mt_rand(0, $width - 1);

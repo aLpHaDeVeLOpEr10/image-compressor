@@ -21,7 +21,7 @@ class RobotsHeaders
 
         if (! config('site.indexable')) {
             $response->headers->set('X-Robots-Tag', 'noindex, nofollow');
-        } elseif ($request->is('admin', 'admin/*')) {
+        } elseif ($request->is('admin', 'admin/*', config('site.admin_login_path'))) {
             $response->headers->set('X-Robots-Tag', 'noindex, nofollow');
         } elseif ($request->is('up', 'process/*', 'storage/*')) {
             $response->headers->set('X-Robots-Tag', 'noindex');

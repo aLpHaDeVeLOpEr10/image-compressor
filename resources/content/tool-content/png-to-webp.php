@@ -14,7 +14,7 @@ return [
     // Summary box and its example figure (also the page's social share image unless one is uploaded).
     'summary' => ['type' => 'textarea', 'value' => 'Upload your PNG, keep the output format set to WebP, choose a quality around 80% and check the edges in the comparison slider, then download the .webp file. Transparency is kept, but the output is lossy WebP, so fine edges and small text can soften slightly.'],
     'figure_alt' => ['type' => 'textarea', 'value' => 'A product cut-out PNG with a soft transparent shadow next to the WebP version, which keeps the same transparency'],
-    'figure_caption' => ['type' => 'textarea', 'value' => 'The PNG with transparency is 15.3 KB; the WebP at quality 80 is 8.7 KB and keeps the transparent background and soft shadow. Measured with the CompressPix server encoder.'],
+    'figure_caption' => ['type' => 'textarea', 'value' => 'The PNG with transparency is 15.3 KB; the WebP at quality 80 is 8.7 KB and keeps the transparent background and soft shadow. Measured with the PicsCompressor server encoder.'],
 
     // Tool card text used in "All tools" grids.
     'card_description' => ['type' => 'textarea', 'value' => 'Convert PNG to WebP and keep transparent backgrounds.'],

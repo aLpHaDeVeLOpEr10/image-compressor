@@ -38,7 +38,7 @@
         "width": 1200,
         "height": 675,
         "alt": "Four enlarged crops of the same photo saved as JPG at quality 90, 70, 40 and 15, with blocking and colour smearing visible at low quality",
-        "caption": "Whole-image JPG sizes: quality 90 = 277 KB, 70 = 126 KB, 40 = 74.4 KB, 15 = 38.2 KB. Measured with the CompressPix server encoder; enlarged 2× so artifacts are visible.",
+        "caption": "Whole-image JPG sizes: quality 90 = 277 KB, 70 = 126 KB, 40 = 74.4 KB, 15 = 38.2 KB. Measured with the PicsCompressor server encoder; enlarged 2× so artifacts are visible.",
         "sources": [
             {
                 "src": "images/examples/jpg-quality-ladder-640.webp",
@@ -72,7 +72,7 @@
         "width": 1200,
         "height": 675,
         "alt": "Side-by-side enlarged crops of a JPG and a WebP of the same photo at almost the same file size",
-        "caption": "JPG at quality 60 is 101 KB. The highest WebP quality that fits the same size is 78 (96.8 KB). Crops enlarged 2×; measured with the CompressPix server encoders.",
+        "caption": "JPG at quality 60 is 101 KB. The highest WebP quality that fits the same size is 78 (96.8 KB). Crops enlarged 2×; measured with the PicsCompressor server encoders.",
         "sources": [
             {
                 "src": "images/examples/jpg-vs-webp-equal-size-640.webp",
@@ -140,7 +140,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A product cut-out PNG with a soft transparent shadow next to the WebP version, which keeps the same transparency",
-        "caption": "The PNG with transparency is 15.3 KB; the WebP at quality 80 is 8.7 KB and keeps the transparent background and soft shadow. Measured with the CompressPix server encoder.",
+        "caption": "The PNG with transparency is 15.3 KB; the WebP at quality 80 is 8.7 KB and keeps the transparent background and soft shadow. Measured with the PicsCompressor server encoder.",
         "sources": [
             {
                 "src": "images/examples/png-to-webp-transparency-640.webp",
@@ -157,7 +157,7 @@
         "width": 1200,
         "height": 675,
         "alt": "Line chart of file size against quality setting for JPG and WebP versions of the same 1600 × 1067 test photo",
-        "caption": "Measured with the CompressPix server encoder (PHP GD). At quality 80 the JPG is 168 KB and the WebP 112 KB; at quality 100 the JPG grows to 934 KB. File size rises steeply above about 90.",
+        "caption": "Measured with the PicsCompressor server encoder (PHP GD). At quality 80 the JPG is 168 KB and the WebP 112 KB; at quality 100 the JPG grows to 934 KB. File size rises steeply above about 90.",
         "sources": [
             {
                 "src": "images/examples/quality-size-curve-640.webp",
@@ -208,7 +208,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A scanned A4 application form compressed to under 100 KB as a JPG, with a 100% crop showing the text is still readable",
-        "caption": "A 1240 × 1754 A4 document scan (653 KB) compressed with a 100 KB target: 96.7 KB at 1240 × 1754 pixels, JPG quality 15, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 1240 × 1754 A4 document scan (653 KB) compressed with a 100 KB target: 96.7 KB at 1240 × 1754 pixels, JPG quality 15, without resizing. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/scan-document-100kb-640.webp",
@@ -225,7 +225,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A handwritten signature scan compressed to under 20 KB as a JPG, with the pen strokes still sharp",
-        "caption": "A 1500 × 600 signature scan (159 KB) compressed with a 20 KB target: 19.9 KB at 1500 × 600 pixels, JPG quality 39, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 1500 × 600 signature scan (159 KB) compressed with a 20 KB target: 19.9 KB at 1500 × 600 pixels, JPG quality 39, without resizing. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/signature-under-20kb-640.webp",
@@ -242,7 +242,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A 12-megapixel landscape test photo compressed with a 100 KB target, shown with its measured size, dimensions and quality",
-        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 100 KB target: 93.9 KB at 3142 × 2356 pixels, JPG quality 10, after the dimensions were reduced. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 100 KB target: 93.9 KB at 3142 × 2356 pixels, JPG quality 10, after the dimensions were reduced. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/target-100kb-640.webp",
@@ -259,7 +259,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A 12-megapixel landscape test photo compressed with a 1 MB target, shown with its measured size, dimensions and quality",
-        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 1 MB target: 1,000 KB at 4000 × 3000 pixels, JPG quality 83, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 1 MB target: 1,000 KB at 4000 × 3000 pixels, JPG quality 83, without resizing. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/target-1mb-640.webp",
@@ -276,7 +276,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A 12-megapixel landscape test photo compressed with a 200 KB target, shown with its measured size, dimensions and quality",
-        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 200 KB target: 194 KB at 4000 × 3000 pixels, JPG quality 16, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 200 KB target: 194 KB at 4000 × 3000 pixels, JPG quality 16, without resizing. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/target-200kb-640.webp",
@@ -293,7 +293,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A 12-megapixel landscape test photo compressed with a 2 MB target, shown with its measured size, dimensions and quality",
-        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 2 MB target: 1.69 MB at 4000 × 3000 pixels, JPG quality 90, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 2 MB target: 1.69 MB at 4000 × 3000 pixels, JPG quality 90, without resizing. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/target-2mb-640.webp",
@@ -310,7 +310,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A 12-megapixel landscape test photo compressed with a 500 KB target, shown with its measured size, dimensions and quality",
-        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 500 KB target: 497 KB at 4000 × 3000 pixels, JPG quality 62, without resizing. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 500 KB target: 497 KB at 4000 × 3000 pixels, JPG quality 62, without resizing. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/target-500kb-640.webp",
@@ -327,7 +327,7 @@
         "width": 1200,
         "height": 675,
         "alt": "A 12-megapixel landscape test photo compressed with a 50 KB target, shown with its measured size, dimensions and quality",
-        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 50 KB target: 49.8 KB at 1998 × 1499 pixels, JPG quality 12, after the dimensions were reduced. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
+        "caption": "A 4000 × 3000 photo (2.61 MB) compressed with a 50 KB target: 49.8 KB at 1998 × 1499 pixels, JPG quality 12, after the dimensions were reduced. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.",
         "sources": [
             {
                 "src": "images/examples/target-50kb-640.webp",

@@ -1,4 +1,4 @@
-# CompressPix
+# PicsCompressor
 
 A free online image compressor and converter for JPG, PNG and WebP, with an admin dashboard for managing every page's content, SEO and language versions.
 
@@ -71,7 +71,7 @@ npm run build
 composer run dev
 ```
 
-This starts the Laravel server and the Vite dev server. The site runs at `http://localhost:8000` and the admin at `http://localhost:8000/admin/login`.
+This starts the Laravel server and the Vite dev server. The site runs at `http://localhost:8000` and the admin sign-in page at `http://localhost:8000/jhasseaidsha12` (see `ADMIN_LOGIN_PATH`).
 
 If a front-end change does not appear, make sure the Vite dev server is running, or run `npm run build`.
 
@@ -81,8 +81,9 @@ Most settings are environment variables in `.env`.
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `APP_URL` | `http://localhost:8000` | Base URL. Used for canonical links, the sitemap and structured data. Use the final `https://` domain in production. |
-| `SITE_BRAND` | `CompressPix` | Brand name shown across the site. |
+| `APP_URL` | `http://localhost:8000` | Base URL. Used for canonical links, the sitemap and structured data. In production this is `https://picscompressor.online`. |
+| `ADMIN_LOGIN_PATH` | `jhasseaidsha12` | Secret path of the admin sign-in page. The rest of `/admin` returns 404 to anyone not signed in. |
+| `SITE_BRAND` | `PicsCompressor` | Brand name shown across the site. |
 | `SITE_TAGLINE` | `Free online image compressor` | Short tagline. |
 | `SITE_INDEXABLE` | `true` in production | When `false`, every page sends `noindex, nofollow`. Keep `false` on staging. |
 | `SITE_COMPANY_NAME`, `SITE_COUNTRY`, `SITE_FOUNDING_YEAR` | | Operator details for the legal pages and structured data. |
@@ -189,7 +190,7 @@ php artisan optimize
 
 Before going live:
 
-- Set `APP_ENV=production`, `APP_DEBUG=false`, `SITE_INDEXABLE=true` and `APP_URL` to the final `https://` domain.
+- Set `APP_ENV=production`, `APP_DEBUG=false`, `SITE_INDEXABLE=true` and `APP_URL=https://picscompressor.online`.
 - Run `php artisan site:launch-check` and fix anything it reports.
 - Create the admin account with `php artisan admin:create`.
 - Make sure the web server can write to `storage/`, `bootstrap/cache/` and, if tools will be added in the admin, `resources/views/tools/content/`.

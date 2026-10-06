@@ -14,22 +14,24 @@ class AdminAuthTest extends TestCase
     {
         config(['site.indexable' => true]);
 
-        $this->get('/admin/login')
+        $this->get('/jhasseaidsha12')
             ->assertOk()
             ->assertSee('name="_token"', false)
             ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
     }
 
-    public function test_guest_is_redirected_to_login(): void
+    public function test_the_admin_area_and_the_old_login_path_are_hidden_from_guests(): void
     {
-        $this->get('/admin')->assertRedirect('/admin/login');
+        $this->get('/admin')->assertNotFound();
+        $this->get('/admin/tools')->assertNotFound();
+        $this->get('/admin/login')->assertNotFound();
     }
 
     public function test_admin_can_log_in(): void
     {
         $admin = User::factory()->admin()->create();
 
-        $this->post('/admin/login', ['email' => $admin->email, 'password' => 'password'])
+        $this->post('/jhasseaidsha12', ['email' => $admin->email, 'password' => 'password'])
             ->assertRedirect('/admin');
 
         $this->assertAuthenticatedAs($admin);
@@ -39,7 +41,7 @@ class AdminAuthTest extends TestCase
     {
         $admin = User::factory()->admin()->create();
 
-        $this->post('/admin/login', ['email' => $admin->email, 'password' => 'wrong-password'])
+        $this->post('/jhasseaidsha12', ['email' => $admin->email, 'password' => 'wrong-password'])
             ->assertSessionHasErrors(['email' => 'These credentials do not match an admin account.']);
 
         $this->assertGuest();
@@ -49,7 +51,7 @@ class AdminAuthTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $this->post('/admin/login', ['email' => $user->email, 'password' => 'password'])
+        $this->post('/jhasseaidsha12', ['email' => $user->email, 'password' => 'password'])
             ->assertSessionHasErrors('email');
 
         $this->assertGuest();
@@ -65,10 +67,10 @@ class AdminAuthTest extends TestCase
         $admin = User::factory()->admin()->create();
 
         for ($i = 0; $i < 5; $i++) {
-            $this->post('/admin/login', ['email' => $admin->email, 'password' => 'wrong-password']);
+            $this->post('/jhasseaidsha12', ['email' => $admin->email, 'password' => 'wrong-password']);
         }
 
-        $this->post('/admin/login', ['email' => $admin->email, 'password' => 'password'])
+        $this->post('/jhasseaidsha12', ['email' => $admin->email, 'password' => 'password'])
             ->assertSessionHasErrors('email');
 
         $this->assertStringStartsWith('Too many sign-in attempts.', session('errors')->first('email'));
@@ -79,7 +81,7 @@ class AdminAuthTest extends TestCase
     {
         $this->actingAs(User::factory()->admin()->create())
             ->post('/admin/logout')
-            ->assertRedirect('/admin/login');
+            ->assertRedirect('/jhasseaidsha12');
 
         $this->assertGuest();
     }

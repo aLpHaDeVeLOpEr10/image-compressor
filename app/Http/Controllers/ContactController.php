@@ -16,7 +16,7 @@ class ContactController extends Controller
 {
     public function show(): View
     {
-        $seo = Seo::make('Contact CompressPix', 'Contact the CompressPix team about the free online image compressor: report a bug, suggest a feature or ask a privacy question.')
+        $seo = Seo::make('Contact PicsCompressor', 'Contact the PicsCompressor team about the free online image compressor: report a bug, suggest a feature or ask a privacy question.')
             ->withBreadcrumbs($this->breadcrumbs(['Contact Us' => route('pages.contact')]))
             ->asPage('ContactPage');
         $seo->canonical = route('pages.contact');
@@ -43,6 +43,6 @@ class ContactController extends Controller
         }
 
         return to_route('pages.contact')
-            ->with('status', 'Thank you for your message. It has been received and will be read by the CompressPix team.');
+            ->with('status', 'Thank you for your message. It has been received and will be read by the PicsCompressor team.');
     }
 }

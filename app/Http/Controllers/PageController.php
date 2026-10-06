@@ -12,19 +12,19 @@ class PageController extends Controller
     public const LEGAL_PAGES = [
         'privacy-policy' => [
             'title' => 'Privacy Policy',
-            'description' => 'How CompressPix handles your images, contact messages, cookies and log data, including when images are processed in your browser or on our server.',
+            'description' => 'How PicsCompressor handles your images, contact messages, cookies and log data, including when images are processed in your browser or on our server.',
         ],
         'terms-and-conditions' => [
             'title' => 'Terms & Conditions',
-            'description' => 'The terms for using CompressPix\'s free online image compression tools, including acceptable use, your content and limitations of liability.',
+            'description' => 'The terms for using PicsCompressor\'s free online image compression tools, including acceptable use, your content and limitations of liability.',
         ],
         'cookie-policy' => [
             'title' => 'Cookie Policy',
-            'description' => 'Which cookies the CompressPix image compressor website uses, why each one is needed, how long they last and how you can manage them.',
+            'description' => 'Which cookies the PicsCompressor image compressor website uses, why each one is needed, how long they last and how you can manage them.',
         ],
         'disclaimer' => [
             'title' => 'Disclaimer',
-            'description' => 'Important limits of the CompressPix image compression tools: approximate target sizes, quality loss, results that vary by image and general information.',
+            'description' => 'Important limits of the PicsCompressor image compression tools: approximate target sizes, quality loss, results that vary by image and general information.',
         ],
     ];
 
@@ -32,8 +32,8 @@ class PageController extends Controller
     {
         return view('pages.about', [
             'seo' => $this->seo(
-                'About CompressPix: Who Builds It and How It Works',
-                'Who operates CompressPix, how the free image compressor works in your browser and on our server, how we test results and how to contact us.',
+                'About PicsCompressor: Who Builds It and How It Works',
+                'Who operates PicsCompressor, how the free image compressor works in your browser and on our server, how we test results and how to contact us.',
                 'pages.about',
             )->asPage('AboutPage', StructuredData::organizationId()),
             'relatedTools' => $tools->all(),
@@ -45,7 +45,7 @@ class PageController extends Controller
         return view('pages.editorial-policy', [
             'seo' => $this->seo(
                 'Editorial Policy: How We Write and Check Our Pages',
-                'How CompressPix researches, tests, reviews and updates its tool pages and help content, and how to report a mistake.',
+                'How PicsCompressor researches, tests, reviews and updates its tool pages and help content, and how to report a mistake.',
                 'pages.editorial',
             ),
         ]);

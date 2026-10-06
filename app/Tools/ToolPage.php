@@ -135,7 +135,7 @@ final readonly class ToolPage
     }
 
     /**
-     * The entity name used in structured data, e.g. "CompressPix JPG Compressor".
+     * The entity name used in structured data, e.g. "PicsCompressor JPG Compressor".
      */
     public function entityName(): string
     {

@@ -2,13 +2,21 @@
 
 return [
 
-    'brand' => env('SITE_BRAND', 'CompressPix'),
+    'brand' => env('SITE_BRAND', 'PicsCompressor'),
 
     'tagline' => env('SITE_TAGLINE', 'Free online image compressor'),
 
-    'description' => 'CompressPix is a free, browser-based image compressor for JPG, PNG and WebP. Reduce file size, hit a target size such as 100KB, convert formats and compare before and after.',
+    'description' => 'PicsCompressor is a free, browser-based image compressor for JPG, PNG and WebP. Reduce file size, hit a target size such as 100KB, convert formats and compare before and after.',
 
     'url' => rtrim(env('APP_URL', 'http://localhost'), '/'),
+
+    /*
+    | Secret path for the admin sign-in page, so the login form is not sitting
+    | at a guessable URL. Everything else stays under /admin, which guests get
+    | a 404 for. Change it here or with ADMIN_LOGIN_PATH.
+    */
+
+    'admin_login_path' => trim(env('ADMIN_LOGIN_PATH', 'jhasseaidsha12'), '/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +30,7 @@ return [
     |
     */
 
-    'company_name' => env('SITE_COMPANY_NAME', 'CompressPix'),
+    'company_name' => env('SITE_COMPANY_NAME', 'PicsCompressor'),
 
     'country' => env('SITE_COUNTRY'),
 

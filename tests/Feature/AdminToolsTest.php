@@ -38,6 +38,6 @@ class AdminToolsTest extends TestCase
 
     public function test_guest_cannot_view_tools(): void
     {
-        $this->get('/admin/tools')->assertRedirect('/admin/login');
+        $this->get('/admin/tools')->assertNotFound();
     }
 }

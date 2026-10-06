@@ -80,7 +80,7 @@ class PublicPagesTest extends TestCase
         $this->get('/tools/png-to-jpg')
             ->assertOk()
             ->assertSee('"@type":"WebApplication"', false)
-            ->assertSee('"name":"CompressPix PNG to JPG Converter"', false)
+            ->assertSee('"name":"PicsCompressor PNG to JPG Converter"', false)
             ->assertSee('"output":"image\/jpeg"', false)
             ->assertSee('<figure', false)
             ->assertSee('Short answer');
@@ -172,7 +172,7 @@ class PublicPagesTest extends TestCase
     {
         $this->get('/llms.txt')
             ->assertOk()
-            ->assertSee('# CompressPix')
+            ->assertSee('# PicsCompressor')
             ->assertSee(url('/tools/png-to-jpg'))
             ->assertSee(url('/faq'))
             ->assertDontSee('/blog');
@@ -231,6 +231,7 @@ class PublicPagesTest extends TestCase
 
     public function test_admin_area_is_not_publicly_accessible(): void
     {
-        $this->get('/admin')->assertRedirect('/admin/login');
+        $this->get('/admin')->assertNotFound();
+        $this->get('/admin/login')->assertNotFound();
     }
 }

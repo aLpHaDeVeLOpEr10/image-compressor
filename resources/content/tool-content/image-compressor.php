@@ -14,7 +14,7 @@ return [
     // Summary box and its example figure (also the page's social share image unless one is uploaded).
     'summary' => ['type' => 'textarea', 'value' => 'To compress an image, upload a JPG, PNG or WebP file, keep the quality around 80% or choose a target size such as 100 KB, then download the result. JPG compression runs in your browser, PNG keeps transparency, and dimensions change only when a target size cannot be met otherwise.'],
     'figure_alt' => ['type' => 'textarea', 'value' => 'Line chart of file size against quality setting for JPG and WebP versions of the same 1600 × 1067 test photo'],
-    'figure_caption' => ['type' => 'textarea', 'value' => 'Measured with the CompressPix server encoder (PHP GD). At quality 80 the JPG is 168 KB and the WebP 112 KB; at quality 100 the JPG grows to 934 KB. File size rises steeply above about 90.'],
+    'figure_caption' => ['type' => 'textarea', 'value' => 'Measured with the PicsCompressor server encoder (PHP GD). At quality 80 the JPG is 168 KB and the WebP 112 KB; at quality 100 the JPG grows to 934 KB. File size rises steeply above about 90.'],
 
     // Tool card text used in "All tools" grids and the footer.
     'card_description' => ['type' => 'textarea', 'value' => 'Compress JPG, PNG and WebP images by quality or to a target size.'],
@@ -89,7 +89,7 @@ HTML],
 <p>JPG output is always encoded by your browser, so the photo is not uploaded.</p>
 HTML],
     'jpg_figure_alt' => ['type' => 'textarea', 'value' => 'Four enlarged crops of the same photo saved as JPG at quality 90, 70, 40 and 15, with blocking and colour smearing visible at low quality'],
-    'jpg_figure_caption' => ['type' => 'textarea', 'value' => 'Whole-image JPG sizes: quality 90 = 277 KB, 70 = 126 KB, 40 = 74.4 KB, 15 = 38.2 KB. Measured with the CompressPix server encoder; enlarged 2× so artifacts are visible.'],
+    'jpg_figure_caption' => ['type' => 'textarea', 'value' => 'Whole-image JPG sizes: quality 90 = 277 KB, 70 = 126 KB, 40 = 74.4 KB, 15 = 38.2 KB. Measured with the PicsCompressor server encoder; enlarged 2× so artifacts are visible.'],
 
     'png_heading' => 'Compress PNG images and keep transparency',
     'png_body' => ['type' => 'html', 'value' => <<<'HTML'
@@ -139,7 +139,7 @@ HTML],
 <p>For small targets, cropping away empty space helps more than lowering quality. Scanned documents stay readable only at reasonable dimensions, so check text at 100% zoom.</p>
 HTML],
     'target_figure_alt' => ['type' => 'textarea', 'value' => 'A 12-megapixel landscape test photo compressed with a 100 KB target, shown with its measured size, dimensions and quality'],
-    'target_figure_caption' => ['type' => 'textarea', 'value' => 'A 4000 × 3000 photo (2.61 MB) compressed with a 100 KB target: 93.9 KB at 3142 × 2356 pixels, JPG quality 10, after the dimensions were reduced. Measured with the CompressPix server compressor, which uses the same quality-then-resize approach as the in-browser tool.'],
+    'target_figure_caption' => ['type' => 'textarea', 'value' => 'A 4000 × 3000 photo (2.61 MB) compressed with a 100 KB target: 93.9 KB at 3142 × 2356 pixels, JPG quality 10, after the dimensions were reduced. Measured with the PicsCompressor server compressor, which uses the same quality-then-resize approach as the in-browser tool.'],
 
     'formats_heading' => 'Supported formats and limits',
     'formats_description' => 'What you can upload, what you can download, and where each image is processed.',

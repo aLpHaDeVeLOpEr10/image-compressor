@@ -22,7 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [SecurityHeaders::class]);
         $middleware->append(RobotsHeaders::class);
         $middleware->alias(['admin' => EnsureUserIsAdmin::class]);
-        $middleware->redirectGuestsTo(fn () => route('admin.login'));
+        // Guests get a 404 for the admin area rather than a redirect, which would give away the sign-in path.
+        $middleware->redirectGuestsTo(fn () => abort(404));
         $middleware->redirectUsersTo(fn () => route('admin.dashboard'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
