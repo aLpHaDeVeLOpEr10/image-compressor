@@ -8,7 +8,7 @@
         ->values();
 @endphp
 
-<header class="sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/85" data-site-header>
+<header class="relative z-40 border-b border-line bg-surface" data-site-header>
     <x-ui.container class="flex h-16 items-center justify-between gap-4">
         <x-site.logo />
 

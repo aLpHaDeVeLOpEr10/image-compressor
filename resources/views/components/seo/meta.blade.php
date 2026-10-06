@@ -10,6 +10,9 @@
 <title>{{ $seo->fullTitle() }}</title>
 <meta name="description" content="{{ $seo->description }}">
 <meta name="robots" content="{{ $robots }}">
+@if (config('site.google_site_verification'))
+    <meta name="google-site-verification" content="{{ config('site.google_site_verification') }}">
+@endif
 @if ($seo->canonical)
     <link rel="canonical" href="{{ $seo->canonical }}">
 @endif

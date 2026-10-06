@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use App\Support\Figures;
 use App\Tools\ToolPage;
 use App\Tools\ToolRegistry;
@@ -220,6 +221,23 @@ class PublicPagesTest extends TestCase
             'site.legal.log_retention' => '30 days',
         ]);
         $this->artisan('site:launch-check')->assertSuccessful();
+    }
+
+    public function test_search_console_verification_is_rendered_on_public_pages_only(): void
+    {
+        config(['site.google_site_verification' => 'test-verification-token']);
+
+        $this->get('/')->assertSee('<meta name="google-site-verification" content="test-verification-token">', false);
+        $this->get('/tools/png-to-jpg')->assertSee('content="test-verification-token"', false);
+
+        $this->actingAs(User::factory()->admin()->create())
+            ->get('/admin')
+            ->assertOk()
+            ->assertDontSee('google-site-verification', false);
+
+        config(['site.google_site_verification' => null]);
+
+        $this->get('/')->assertDontSee('google-site-verification', false);
     }
 
     public function test_security_headers_are_sent(): void

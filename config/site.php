@@ -51,6 +51,13 @@ return [
 
     'twitter_handle' => env('SITE_TWITTER_HANDLE'),
 
+    /*
+    | Verification token for Google Search Console, rendered as a meta tag in
+    | the head of every page. Keep it in place; removing it un-verifies the site.
+    */
+
+    'google_site_verification' => env('GOOGLE_SITE_VERIFICATION'),
+
     'social' => array_filter([
         'X' => env('SITE_SOCIAL_TWITTER'),
         'Facebook' => env('SITE_SOCIAL_FACEBOOK'),
